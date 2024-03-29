@@ -1,4 +1,4 @@
-const { Perceptron } = require("../Perceptron");
+const { Perceptron } = require("../src/ts/Perceptron");
 const { Random } = require("../../Random/Random");
 
 describe("A Perceptron", () => {

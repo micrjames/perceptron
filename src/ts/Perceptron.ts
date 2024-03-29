@@ -1,4 +1,4 @@
-const { Random } = require("../Random/Random");
+const { Random } = require("../../../Random/Random");
 const { dot } = require("./utils");
 
 class Perceptron {
