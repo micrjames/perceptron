@@ -1,7 +1,7 @@
-const { Random } = require("./Random");
-const { dot } = require("./utils");
+import { Random } from "../../Random/Random";
+import { dot } from  "./utils";
 
-class Perceptron {
+export class Perceptron {
    private _weights: number[];
    private c: number;
 
@@ -35,5 +35,3 @@ class Perceptron {
 	  return this._weights;
    }
 }
-
-exports.Perceptron = Perceptron;

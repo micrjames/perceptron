@@ -1,12 +1,13 @@
 {
-   "name": "webpack-starter",
+   "name": "perceptron",
    "version": "1.0.0",
-   "description": "A webpack starter framework",
+   "description": "An implementation of a Perceptron. ",
    "main": "index.js",
    "directories": {
       "test": "tests"
    },
    "scripts": {
+	  "postinstall": "git clone git@github.com:micrjames/Random",
       "compile:ts": "npx tsc",
       "compile:sass": "sass ./src/scss:./dist/css",
       "build": "npm run compile:ts && npm run compile:sass && cd ./src && cp -R $(ls | grep '[^./ts]') ../dist",

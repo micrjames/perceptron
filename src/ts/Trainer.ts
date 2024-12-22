@@ -1,4 +1,4 @@
-class Trainer {
+export class Trainer {
    private _inputs: number[];
    private _answer: number;
 
@@ -13,5 +13,3 @@ class Trainer {
 	  return this._answer;
    }
 }
-
-exports.Trainer = Trainer;
