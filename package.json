@@ -9,11 +9,12 @@
    "scripts": {
 	  "postinstall": "git clone git@github.com:micrjames/Random",
       "compile:ts": "npx tsc",
+	  "postcompile:ts": "mv ./dist/src/ts ./dist/src/js",
       "compile:sass": "sass ./src/scss:./dist/css",
-      "build": "npm run compile:ts && npm run compile:sass && cd ./src && cp -R $(ls | grep '[^./ts]') ../dist",
+      "build": "npm run compile:ts && npm run compile:sass && cd ./src && cp -R $(ls | grep '[^./ts|./scss]') ../dist",
       "start:run": "nodemon app.js",
       "start:build": "npm run build && npm run start:run",
-      "clean:build": "cd ./dist && rm -rf .js",
+      "clean:build": "cd ./dist && rm -rf ./js",
       "clean:all": "rm -rf ./dist"
    },
    "keywords": [
