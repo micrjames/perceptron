@@ -1,3 +1,7 @@
 import "./styles/main.scss";
+import { init } from "./initPerceptron";
 
-console.log("ts bundling works");
+const width = undefined;
+const height = undefined;
+
+document.addEventListener("DOMContentLoaded", () => init(width, height));

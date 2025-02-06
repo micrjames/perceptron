@@ -59,7 +59,7 @@ module.exports = {
 		 verbose: true
 	  }),
 	  new HtmlWebpackPlugin({
-		 title: 'Webpack App',
+		 title: 'Perceptron',
 		 filename: 'index.html',
 		 template: 'src/template.html'
 	  })
