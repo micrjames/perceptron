@@ -2,7 +2,7 @@
    "compilerOptions": {
 	  "target": "ES6",
 	  "module": "ES6",
-	  "rootDir": "./",
+	  "rootDir": "./src",
 	  "outDir": "./dist",
 	  "removeComments": true,
 	  "noEmitOnError": true,
@@ -15,6 +15,8 @@
 	  "allowUnreachableCode": false,
 	  "strictNullChecks": true
    },
-   "include": ["src/ts", "Random"],
-   "exclude": ["node_modules", "dist", "Random/tests/*.ts"]
+   "exclude": [
+	  "node_modules",
+	  "tests"                                                             
+   ]
 }
