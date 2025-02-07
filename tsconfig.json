@@ -13,10 +13,13 @@
 	  "noUnusedParameters": true,
 	  "noUnusedLocals": true,
 	  "allowUnreachableCode": false,
-	  "strictNullChecks": true
+	  "strictNullChecks": true,
+	  "sourceMap": true
    },
+   "include": ["src/**/*"],
    "exclude": [
 	  "node_modules",
-	  "tests"                                                             
+	  "tests",
+	  "**/*.spec.ts"
    ]
 }
