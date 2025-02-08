@@ -1,4 +1,5 @@
 import { Point, DrawType, sfColor } from "./utils";
+import { container } from "./incs"; 
 
 export class Circle {
    private point: Point;
@@ -12,6 +13,10 @@ export class Circle {
          "fill": fillColor,
          "stroke": strokeColor
       };
+   }
+
+   get _color(): sfColor {
+	  return this.color;
    }
 
    draw(ctx: CanvasRenderingContext2D, drawType: DrawType = DrawType.None, lineWidth: number = 1) {
@@ -33,5 +38,11 @@ export class Circle {
             ctx.stroke();
          }
       }
+   }
+
+   get ctx(): CanvasRenderingContext2D | null | undefined {
+	  const canvas = container?.firstElementChild as HTMLCanvasElement | null;
+	  const ctx = canvas?.getContext('2d');
+	  return ctx;
    }
 }
