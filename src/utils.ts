@@ -11,3 +11,8 @@ export interface sfColor {
    "stroke": String | undefined;
    "fill": String | undefined;
 };
+export interface Animatable {
+   draw(ctx: CanvasRenderingContext2D, drawType: DrawType): void;
+   _color: sfColor;
+   get ctx(): CanvasRenderingContext2D | null | undefined;
+}

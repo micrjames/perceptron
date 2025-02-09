@@ -1,7 +1,7 @@
-import { Point, DrawType, sfColor } from "./utils";
+import { Point, DrawType, sfColor, Animatable } from "./utils";
 import { container } from "./incs"; 
 
-export class Circle {
+export class Circle implements Animatable {
    private point: Point;
    private radius: number;
    private color: sfColor; 

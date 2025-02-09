@@ -14,7 +14,7 @@ export function init(width?: number, height?: number) {
 		 x: rect.x, y: rect.y
 	  }, 100); // , "lightgreen", "green");
 	  // circle.draw(ctx, DrawType.FillAndStroke, 5);
-	  const colorAnimation = new Animation(circle, ["red", "blue", "green", "yellow"], 2000);
+	  const colorAnimation = new Animation<Circle>(circle, ["red", "blue", "green", "yellow"], 2000);
 	  colorAnimation.start(); // Start the animation
 
 // Later, to stop:
