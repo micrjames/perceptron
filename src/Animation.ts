@@ -1,22 +1,26 @@
-import { DrawType, Animatable } from "./utils";
+import { AnimationFunction } from "./utils";
 
-export class Animation<T extends Animatable> {
-   private animatable: T;
-   private colors: string[];
+// export class Animation<T extends Animatable> {
+export class Animation {
+   // private animatable: T;
+   // private colors: string[];
    private intervalMS: number;
 
    private animationFrameId: number | null;
    private lastUpdate: number;
-   private currentColorIndex: number;
+   // private currentColorIndex: number;
+   private animateCallback: AnimationFunction;
 
-   constructor(animatable: T, colors: string[], intervalMS: number = 1000) {
-	  this.animatable = animatable;
-	  this.colors = colors;
+   // constructor(animatable: T, colors: string[], intervalMS: number = 1000) {
+   constructor(animateCallback: AnimationFunction, intervalMS: number = 1000) {
+	  // this.animatable = animatable;
+	  // this.colors = colors;
 	  this.intervalMS = intervalMS;
 
 	  this.animationFrameId = null;
 	  this.lastUpdate = 0;
-	  this.currentColorIndex = 0;
+	  // this.currentColorIndex = 0;
+	  this.animateCallback = animateCallback; 
    }
 
    start() {
@@ -27,6 +31,7 @@ export class Animation<T extends Animatable> {
 
 	  const animate = (timestamp: number) => {
 		 if(timestamp - this.lastUpdate > this.intervalMS) {
+			/*
 			// Change to next color
 			this.currentColorIndex = (this.currentColorIndex + 1)%this.colors.length;
 			// this.circle._color.fill = this.colors[this.currentColorIndex];
@@ -35,6 +40,9 @@ export class Animation<T extends Animatable> {
 			// Redraw with new color
 			// this.circle.draw(<CanvasRenderingContext2D>this.circle.ctx, DrawType.Fill);
 			this.animatable.draw(<CanvasRenderingContext2D>this.animatable.ctx, DrawType.Fill);
+		    */
+
+		    this.animateCallback(timestamp);
 
 			this.lastUpdate = timestamp;
 		 }

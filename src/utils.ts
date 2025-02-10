@@ -16,3 +16,4 @@ export interface Animatable {
    _color: sfColor;
    get ctx(): CanvasRenderingContext2D | null | undefined;
 }
+export type AnimationFunction = (timestamp: number) => void;
