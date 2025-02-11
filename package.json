@@ -7,6 +7,7 @@
       "test": "tests"
    },
    "scripts": {
+	  "postinstall": "git clone git@github.com:micrjames/CanvasToolkit && mv CanvasToolkit src/CanvasToolkit",
       "build": "webpack",
       "start": "webpack serve",
       "test": "jest"

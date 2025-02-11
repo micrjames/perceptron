@@ -1,4 +1,4 @@
-import { Point, DrawType, sfColor, Animatable } from "./utils";
+import { Point, DrawType, sfColor, Animatable } from "./CanvasToolkit/utils";
 import { container } from "./incs"; 
 
 export class Circle implements Animatable {
