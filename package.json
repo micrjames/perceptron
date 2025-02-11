@@ -10,7 +10,8 @@
 	  "postinstall": "git clone git@github.com:micrjames/CanvasToolkit && mv CanvasToolkit src/CanvasToolkit",
       "build": "webpack",
       "start": "webpack serve",
-      "test": "jest"
+      "test": "jest",
+	  "clean": "rm -rf node_modules && cd ./src && rm -rf CanvasToolkit"
    },
    "keywords": [
       "webpack",
