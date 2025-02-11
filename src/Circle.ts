@@ -5,14 +5,18 @@ export class Circle implements Animatable {
    private point: Point;
    private radius: number;
    private color: sfColor; 
+   private colors: string[];
+   private currentColorIndex: number;
 
-   constructor(point: Point, radius: number, fillColor?: string, strokeColor?: string) {
+   constructor(point: Point, radius: number, fillColor?: string, strokeColor?: string, ...colors: string[]) {
       this.point = point;
       this.radius = radius;
       this.color = {
          "fill": fillColor,
          "stroke": strokeColor
       };
+	  this.colors = colors;
+	  this.currentColorIndex = 0;
    }
 
    get _color(): sfColor {
@@ -38,6 +42,17 @@ export class Circle implements Animatable {
             ctx.stroke();
          }
       }
+   }
+
+   animateColor(timestamp: number) {
+	  console.log(timestamp);
+	  // Change to next color
+	  this.currentColorIndex = (this.currentColorIndex + 1)%this.colors.length;
+	  // this.circle._color.fill = this.colors[this.currentColorIndex];
+	  this._color.fill = this.colors[this.currentColorIndex];
+	  
+	  // Redraw with new color
+	  this.draw(<CanvasRenderingContext2D>this.ctx, DrawType.Fill);
    }
 
    get ctx(): CanvasRenderingContext2D | null | undefined {
